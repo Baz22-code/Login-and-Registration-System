@@ -1,0 +1,59 @@
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    width: 350px; /* Adjust width as needed */
+    padding: 20px;
+    border: 1px solid #615353;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(199, 16, 16, 0.1);
+    background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+}
+
+.register-form label{
+    font-size: 20px;
+}
+
+
+/* Style for input fields */
+.register-form input[type="text"],
+.register-form input[type="password"],
+.register-form input[type="submit"],
+.register-form   input[type="button"] 
+ {
+    width: 200px;
+    margin-top: 10px;    
+    height: 35px;
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Style for submit button */
+.register-form   input[type="submit"],
+.register-form   input[type="button"] {
+    width: 150px;
+    margin-top: 15px;
+    background-color: #4CAF50; /* Button color */
+    color: white;              /* Text color */
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+}
+
+/* Change submit button color on hover */
+.register-form input[type="submit"]:hover,
+.register-form   input[type="button"]:hove {
+    background-color: #45a049;
+}
+
+.form_1{
+    display: flex;
+}

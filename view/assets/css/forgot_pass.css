@@ -1,0 +1,60 @@
+
+.forgot-form {
+    height: 200px;
+    width: 350px; /* Adjust width as needed */
+    padding: 20px;
+    border: 1px solid #615353;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(199, 16, 16, 0.1);
+    background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+}
+
+.login-form label{
+    font-size: 20px;
+}
+
+
+/* Style for input fields */
+.forgot-form input[type="text"],
+.forgot-form input[type="password"],
+.forgot-form input[type="submit"],
+.forgot-form input[type="button"] {
+    width: 200px;
+    margin-top: 10px;    
+    height: 35px;
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Style for submit button */
+.forgot-form input[type="submit"],
+.forgot-form input[type="button"] {
+    width: 150px;
+    margin-top: 15px;
+    background-color: #4CAF50; /* Button color */
+    color: white;              /* Text color */
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+}
+
+/* Change submit button color on hover */
+.forgot-form input[type="submit"]:hover,
+.forgot-form input[type="button"]:hover {
+    background-color: #45a049;
+}
+
+
+.form_3 {
+    display: flex;
+}
+
+
+

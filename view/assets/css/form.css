@@ -1,0 +1,111 @@
+/* Reset body margins */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* Center the login form */
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: linear-gradient(to top, #0b6ab8 0%, #094a94 100%);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.login-form {
+    height: 350px;
+    width: 350px; /* Adjust width as needed */
+    padding: 20px;
+    border: 1px solid #615353;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(199, 16, 16, 0.1);
+    background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+}
+
+h1{
+    text-align: center;
+    margin-top:-8px;
+    font-size: 35px;    
+}
+
+form {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+    gap: 2px;
+}
+
+.login-form label{
+    font-size: 20px;
+}
+
+
+/* Style for input fields */
+.login-form input[type="text"],
+.login-form input[type="password"],
+.login-form input[type="submit"] {
+    width: 200px;
+    margin-top: 10px;    
+    height: 35px;
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Style for submit button */
+.login-form input[type="submit"] {
+    margin-top: 15px;
+    background-color: #4CAF50; /* Button color */
+    color: white;              /* Text color */
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+}
+
+/* Change submit button color on hover */
+.login-form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.styled-line {
+    border: none;             /* Remove default border styling */
+    border-top: 1px solid #ddd; /* Set the color and thickness of the line */
+    width: 80%;               /* Adjust width as needed */
+    margin: 13px auto;        /* Center it and add vertical spacing */
+}
+a {
+
+    margin-left: 120px;
+}
+
+button {
+    width: 180px;
+    height: 35px;
+    margin-top: 3px;
+    margin-left: 87px;
+    background-color: #4CAF50; /* Button color */
+    color: white;              /* Text color */
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;    
+}
+
+
+
+
+
