@@ -1,25 +1,44 @@
-<?php require __DIR__ . "/assets/partials/header.php"?>    
+<?php require __DIR__ . "/assets/partials/header.php"; ?>    
 <body>
-
-    <div  class="register-form">
-
+    <div class="register-form">
         <h1>Registration</h1>  
 
-        <form action="">
+        <form action="" method="POST" id="registrationForm">
             
-            <input type="text" name="Firstname" placeholder="Firstname">
-            <input type="text" name="Lastname" placeholder="Lastname">
-        
-            <input type="text" name="username" placeholder="Username">
-            <input type="password" name="password" placeholder ="Password">
-            <input type="password" name="Confirm_password" placeholder="Confirm Password">
-            
-            <div class="form_1">
-            <input type="submit" id="create_btn" value="Create">
-            <input type="button" id="cancel_btn" value="Cancel" onclick="window.location.href='/Login/index.php'">
+            <div class="input-container">
+                <input type="text" id="firstName" name="firstName" placeholder=" " />
+                <label for="firstName">Firstname</label>
+                <span class="error" id="firstNameError"><?php echo $errors["firstName"] ?? ''; ?></span>
             </div>
             
+            <div class="input-container">
+                <input type="text" id="lastName" name="lastName" placeholder=" " />
+                <label for="lastName">Lastname</label>
+                <span class="error" id="lastNameError"><?php echo $errors["lastName"] ?? ''; ?></span>
+            </div>
+        
+            <div class="input-container">
+                <input type="text" id="username" name="username" placeholder=" " />
+                <label for="username">Username</label>
+                <span class="error" id="userNameError"><?php echo $errors["username"] ?? ''; ?></span>
+            </div>
+            
+            <div class="input-container">
+                <input type="password" id="password" name="password" placeholder=" " />
+                <label for="password">Password</label>
+                <span class="error" id="passwordError"><?php echo $errors["password"] ?? ''; ?></span>
+            </div>
+            
+            <div class="input-container">
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder=" " />
+                <label for="confirmPassword">Confirm Password</label>
+                <span class="error" id="confirmPasswordError"><?php echo $errors["confirmPassword"] ?? ''; ?></span>
+            </div>
+            
+            <div class="button_container">
+                <input type="submit" id="create_btn" value="Create">
+                <input type="button" id="cancel_btn" value="Cancel" onclick="window.location.href='/Login-System/index.php'">
+            </div>
         </form>
-        
-        
-<?php require __DIR__ . "/assets/partials/footer.php"?>
+    </div>
+<?php require __DIR__ . "/assets/partials/footer.php"; ?>

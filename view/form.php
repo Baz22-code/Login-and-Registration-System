@@ -13,7 +13,7 @@
             <input type="submit" id="time" value="Login">
         </form>
 
-        <a href="/Login/index.php/forgot" class="underline-link">Forgot Password?</a>
+        <a href="/Login-System/index.php/forgot" class="underline-link">Forgot Password?</a>
         <hr class="styled-line">
         <button onclick="redirectToRegister()">Create new account</button>
 

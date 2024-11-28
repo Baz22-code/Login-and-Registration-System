@@ -12,7 +12,7 @@
             </div>
             <div class="form_3">
             <input type="submit" id="proceed_btn" value="Proceed">
-            <input type="button" id="cancel_btn" value="Cancel" onclick="window.location.href='/Login/index.php'">
+            <input type="button" id="cancel_btn" value="Cancel" onclick="window.location.href='/Login-System/index.php'">
             </div>
         </form>
         
