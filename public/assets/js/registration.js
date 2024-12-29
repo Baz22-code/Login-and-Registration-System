@@ -42,24 +42,31 @@ document.getElementById("registrationForm").addEventListener("submit", function 
         formData.append("lastName", lastName);
         formData.append("username", username);
         formData.append("password", password);
-        formData.append("confirmPassword", confirmPassword);
 
-        fetch("../controller/registration_controller.php", {
+        fetch("/Login-System/app/controller/registration_controller.php", {
             method: "POST",
             body: formData,
         })
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    return response.json().then(errorData => {
+                        throw new Error(errorData.message || "Unexpected server error.");
+                    });
+                }
+                return response.json();
+            })
             .then(data => {
                 if (data.success) {
-                    alert(data.message);
                     document.getElementById("registrationForm").reset();
+                    alert(data.message);
                 } else {
-                    for (const key in data.errors) {
-                        showError(`${key}Error`, data.errors[key]);
-                    }
+                    alert(data.message);
                 }
             })
-            .catch(error => console.error("Error:", error));
+            .catch(error => {
+                console.error("Error:", error.message);
+                alert(error.message);
+            });
     }
 });
 

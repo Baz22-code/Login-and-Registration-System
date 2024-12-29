@@ -1,9 +1,9 @@
-<?php require __DIR__ . "/assets/partials/header.php"; ?>    
+<?php require_once __DIR__ . '/../../public/assets/partials/header.php'; ?>   
 <body>
     <div class="register-form">
         <h1>Registration</h1>  
 
-        <form action="" method="POST" id="registrationForm">
+        <form method="POST" id="registrationForm">
             
             <div class="input-container">
                 <input type="text" id="firstName" name="firstName" placeholder=" " />
@@ -37,8 +37,8 @@
             
             <div class="button_container">
                 <input type="submit" id="create_btn" value="Create">
-                <input type="button" id="cancel_btn" value="Cancel" onclick="window.location.href='/Login-System/index.php'">
+                <input type="button" id="cancel_btn" value="Cancel" onclick="window.location.href='/Login-System/public/index.php'">
             </div>
         </form>
     </div>
-<?php require __DIR__ . "/assets/partials/footer.php"; ?>
+<?php require __DIR__ . "/../../public/assets/partials/footer.php"?>

@@ -1,6 +1,6 @@
-
 <?php   
-require_once __DIR__ . "/../Database.php";
+require_once __DIR__ . "/../../config/database.sql";
+
 
 class RegistrationModel {
     private $pdo;
@@ -9,32 +9,28 @@ class RegistrationModel {
         $this->pdo = Database::getInstance()->getConnection();
     }
 
+    // Find the username in the database
+    public function findUsername($username) {
+        $stmt = $this->pdo->prepare("SELECT * FROM user WHERE username = :username");
+        $stmt->execute(['username' => $username]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    // Insert the user in the database
     public function registerUser($firstName, $lastName, $username, $password) {
- 
         try {
-            $validateUser = "SELECT * FROM user WHERE username = :username";
-            $stmt = $this->pdo->prepare($validateUser);
-            $stmt->execute(['username' => $username]);
-
-            if ($stmt->rowCount() > 0) {
-                return ["success" => false, "message" => "Username already exists."];
-            }
-
             $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-
             $sql = "INSERT INTO user (firstName, lastName, username, password) 
                     VALUES (:firstName, :lastName, :username, :password)";
             $stmt = $this->pdo->prepare($sql);
-            $stmt->execute([
+            return $stmt->execute([
                 'firstName' => $firstName,
                 'lastName' => $lastName,
                 'username' => $username,
-                'password' => $hashedPassword
+                'password' => $hashedPassword,
             ]);
-
-            return ["success" => true, "message" => "User registered successfully."];
         } catch (PDOException $e) {
-            return ["success" => false, "message" => "Error: " . $e->getMessage()];
+            return false; // Log the error in production
         }
     }
 }
