@@ -43,7 +43,7 @@ document.getElementById("registrationForm").addEventListener("submit", function 
         formData.append("username", username);
         formData.append("password", password);
 
-        fetch("/Login-System/app/controller/registration_controller.php", {
+        fetch("http://localhost/Login-System/app/controller/registration_controller.php", {
             method: "POST",
             body: formData,
         })
