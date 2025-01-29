@@ -5,10 +5,10 @@
 
         <h1>Forgot Password</h1>  
 
-        <form action="">
+        <form method="POST" id="forgot_pass">
             <div class="form_2">
-                <input type="text" name="username" placeholder="Username">
-                <input type="text" name="username" placeholder="Secret ID">
+                <input type="text" name="username" id="username" placeholder="Username">
+                <input type="text" name="secretId" id="secretId" placeholder="Secret ID">
             </div>
             <div class="form_3">
             <input type="submit" id="proceed_btn" value="Proceed">

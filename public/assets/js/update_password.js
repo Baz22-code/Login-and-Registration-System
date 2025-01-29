@@ -1,56 +1,35 @@
-document.getElementById("registrationForm").addEventListener("submit", function (event) {
+document.getElementById("updatePassword").addEventListener("submit", function (event) {
     event.preventDefault();
     clearErrors();
 
-    const firstName = document.getElementById("firstName").value.trim();
-    const lastName = document.getElementById("lastName").value.trim();
-    const secretId = document.getElementById("secretId").value.trim();
     const username = document.getElementById("username").value.trim();
-    const password = document.getElementById("password").value.trim();
+    const secretId = document.getElementById("secretId").value.trim();
+    const newPassword = document.getElementById("newPassword").value.trim();
     const confirmPassword = document.getElementById("confirmPassword").value.trim();
+
 
     let isValid = true;
 
-    if (firstName.length < 3) {
-        showError("firstNameError", "Firstname must be at least 3 characters.");
-        isValid = false;
-    }
-
-    if (lastName.length < 3) {
-        showError("lastNameError", "Lastname must be at least 3 characters.");
-        isValid = false;
-    }
-
-    if (secretId.length < 3) {
-        showError("secretId", "Lastname must be at least 3 characters.");
-        isValid = false;
-    }
-
-    if (username.length < 3) {
-        showError("userNameError", "Username must be at least 3 characters.");
-        isValid = false;
-    }
-
     const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
-    if (!passwordPattern.test(password)) {
-        showError("passwordError", "Password must have 8 characters, uppercase, lowercase, and a number.");
+    if (!passwordPattern.test(newPassword)) {
+        showError("new_passwordError", "Password must have 8 characters, uppercase, lowercase, and a number.");
         isValid = false;
     }
 
-    if (password !== confirmPassword) {
+    if (newPassword !== confirmPassword) {
         showError("confirmPasswordError", "Passwords do not match.");
         isValid = false;
     }
 
+
     if (isValid) {
         const formData = new FormData();
-        formData.append("firstName", firstName);
-        formData.append("lastName", lastName);
         formData.append("secretId", secretId);
         formData.append("username", username);
-        formData.append("password", password);
+        formData.append("newPassword", newPassword);
+        formData.append("confirmPassword", confirmPassword);
 
-        fetch("http://localhost/Login-System/app/controller/registration_controller.php", {
+        fetch("http://localhost/Login-System/app/controller/update_password.php", {
             method: "POST",
             body: formData,
         })
@@ -64,7 +43,6 @@ document.getElementById("registrationForm").addEventListener("submit", function 
             })
             .then(data => {
                 if (data.success) {
-                    document.getElementById("registrationForm").reset();
                     alert(data.message);
                 } else {
                     alert(data.message);
@@ -75,6 +53,7 @@ document.getElementById("registrationForm").addEventListener("submit", function 
                 alert(error.message);
             });
     }
+            
 });
 
 function clearErrors() {

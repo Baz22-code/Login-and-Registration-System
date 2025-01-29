@@ -19,6 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     ob_clean(); // Prevent extra output
     $firstName = trim(htmlspecialchars($_POST["firstName"] ?? ""));
     $lastName = trim(htmlspecialchars($_POST["lastName"] ?? ""));
+    $secretId = trim(htmlspecialchars($_POST["secretId"] ?? ""));
     $username = trim(htmlspecialchars($_POST["username"] ?? ""));
     $password = trim($_POST["password"] ?? "");
 
@@ -30,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         return;
     }
 
-    $isRegistered = $this->model->registerUser($firstName, $lastName, $username, $password);
+    $isRegistered = $this->model->registerUser($firstName, $lastName,$secretId, $username, $password);
 
     if ($isRegistered) {
         http_response_code(201);

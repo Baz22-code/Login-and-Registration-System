@@ -13,4 +13,5 @@
     <link rel="stylesheet" href="<?php echo $basePath; ?>form.css">
     <link rel="stylesheet" href="<?php echo $basePath; ?>forgot_pass.css">
     <link rel="stylesheet" href="<?php echo $basePath; ?>registration.css">
+    <link rel="stylesheet" href="<?php echo $basePath; ?>update_pass.css">
 </head>

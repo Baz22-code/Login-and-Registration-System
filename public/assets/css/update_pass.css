@@ -1,7 +1,7 @@
-.register-form {
+.update_pass {
     display: flex;
     flex-direction: column;
-    height: 480px;
+    height: 350px;
     width: 400px; /* Adjust width as needed */
     padding: 20px;
     border: 1px solid #615353;
@@ -12,15 +12,15 @@
     -webkit-backdrop-filter: blur(10px);    
 }
 
-.register-form label{
+.update_pass label{
     font-size: 20px;
 }
 
 /* Style for input fields */
-.register-form input[type="text"],
-.register-form input[type="password"],
-.register-form input[type="submit"],
-.register-form   input[type="button"] 
+.update_pass input[type="text"],
+.update_pass input[type="password"],
+.update_pass input[type="submit"],
+.update_pass   input[type="button"] 
  {
     width: 200px;
     margin-top: 10px;    
@@ -34,8 +34,8 @@
 }
 
 /* Style for submit button */
-.register-form   input[type="submit"],
-.register-form   input[type="button"] {
+.update_pass   input[type="submit"],
+.update_pass   input[type="button"] {
     width: 150px;
     margin-top: 15px;
     background-color: #4CAF50; /* Button color */
@@ -46,8 +46,8 @@
 }
 
 /* Change submit button color on hover */
-.register-form input[type="submit"]:hover,
-.register-form   input[type="button"]:hove {
+.update_pass input[type="submit"]:hover,
+.update_pass   input[type="button"]:hove {
     background-color: #45a049;
 }
 

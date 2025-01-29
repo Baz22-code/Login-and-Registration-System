@@ -17,15 +17,16 @@ class RegistrationModel {
     }
 
     // Insert the user in the database
-    public function registerUser($firstName, $lastName, $username, $password) {
+    public function registerUser($firstName, $lastName,$secretId, $username, $password) {
         try {
             $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-            $sql = "INSERT INTO user (firstName, lastName, username, password) 
-                    VALUES (:firstName, :lastName, :username, :password)";
+            $sql = "INSERT INTO user (firstName, lastName,secretId,username, password) 
+                    VALUES (:firstName, :lastName,:secretId ,:username, :password)";
             $stmt = $this->pdo->prepare($sql);
             return $stmt->execute([
                 'firstName' => $firstName,
                 'lastName' => $lastName,
+                'secretId' => $secretId,
                 'username' => $username,
                 'password' => $hashedPassword,
             ]);

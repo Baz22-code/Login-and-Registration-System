@@ -8,6 +8,8 @@ if ($uri == "/Login-System/public/index.php") {
     require "../app/controller/forgot_controller.php";  
 } elseif ($uri == "/Login-System/public/index.php/register") {
     require "../app/controller/registration_controller.php";  
-} else {
+} elseif ($uri == "/Login-System/public/index.php/update_password") {
+    require "../app/controller/update_password_controller.php";  
+}else {
     http_response_code(404);
 }
